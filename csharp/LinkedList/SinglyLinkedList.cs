@@ -2,22 +2,22 @@
 
 using System;
 
-public class Node
+public class Node<T>
 {
-    public int data;
-    public Node? next;
+    public T data;
+    public Node<T>? next;
 
-    public Node(int d)
+    public Node(T value)
     {
-        data = d;
+        data = value;
         next = null;
     }
 }
 
-public class SinglyLinkedList
+public class SinglyLinkedList<T>
 {
     public uint length;
-    public Node? head;
+    public Node<T>? head;
 
     public SinglyLinkedList()
     {
@@ -25,12 +25,12 @@ public class SinglyLinkedList
         head = null;
     }
 
-    public void Append(int value)
+    public void Append(T value)
     {
         throw new NotImplementedException("Not implemented.");
     }
 
-    public void Remove(int index)
+    public void Remove()
     {
         throw new NotImplementedException("Not implemented.");
     }
