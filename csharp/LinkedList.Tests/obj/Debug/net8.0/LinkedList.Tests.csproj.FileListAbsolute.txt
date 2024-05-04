@@ -99,3 +99,4 @@
 /home/matheus_alpe/workspace/personal-projects/data-structures/csharp/LinkedList.Tests/obj/Debug/net8.0/LinkedList.Tests.pdb
 /home/matheus_alpe/workspace/personal-projects/data-structures/csharp/LinkedList.Tests/obj/Debug/net8.0/LinkedList.Tests.genruntimeconfig.cache
 /home/matheus_alpe/workspace/personal-projects/data-structures/csharp/LinkedList.Tests/obj/Debug/net8.0/ref/LinkedList.Tests.dll
+/home/matheus_alpe/workspace/personal-projects/data-structures/csharp/LinkedList.Tests/obj/Debug/net8.0/LinkedList.Tests.sourcelink.json
