@@ -59,4 +59,25 @@ public class SingleLinkedListTest
         Assert.Equal("", result.ToString());
         Assert.Equal((uint)0, result.length);
     }
+
+    [Fact]
+    public void ShouldReturnFalseOnEmptySearch()
+    {
+        var result = new SinglyLinkedList<int>();
+        result.Append(10);
+        result.Append(20);
+        Assert.False(result.Has(30));
+        Assert.Equal((uint)2, result.length);
+    }
+
+    [Fact]
+    public void ShouldReturnTrueOnSearch()
+    {
+        var result = new SinglyLinkedList<int>();
+        result.Append(10);
+        result.Append(20);
+        result.Append(30);
+        Assert.True(result.Has(20));
+        Assert.Equal((uint)3, result.length);
+    }
 }

@@ -71,6 +71,23 @@ public class SinglyLinkedList<T>
         }
     }
 
+    public bool Has(T target)
+    {
+        var current = this.head;
+
+        while (current != null && current.data != null)
+        {
+            if (current.data.Equals(target))
+            {
+                return true;
+            }
+
+            current = current.next;
+        }
+
+        return false;
+    }
+
     public override String ToString()
     {
         var current = this.head;
@@ -89,5 +106,4 @@ public class SinglyLinkedList<T>
 
         return s.ToString();
     }
-
 }
