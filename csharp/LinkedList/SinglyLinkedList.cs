@@ -42,6 +42,21 @@ public class SinglyLinkedList<T>
         this.tail = n;
     }
 
+    public void Prepend(T value)
+    {
+        this.length += 1;
+        var n = new Node<T>(value);
+
+        if (this.head == null)
+        {
+            this.head = this.tail = n;
+            return;
+        }
+
+        n.next = this.head;
+        this.head = n;
+    }
+
     public void Pop()
     {
         if (this.head == null || this.tail == null)

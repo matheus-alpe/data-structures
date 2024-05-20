@@ -28,13 +28,35 @@ public class SingleLinkedListTest
     }
 
     [Fact]
-    public void ShouldBeInRightOrder()
+    public void ShouldBeAppendInRightOrder()
     {
         var result = new SinglyLinkedList<int>();
         result.Append(10);
         result.Append(20);
         result.Append(30);
         Assert.Equal("10 -> 20 -> 30", result.ToString());
+        Assert.Equal((uint)3, result.length);
+    }
+
+    [Fact]
+    public void ShouldBePrependInRightOrder()
+    {
+        var result = new SinglyLinkedList<int>();
+        result.Prepend(10);
+        result.Prepend(20);
+        result.Prepend(30);
+        Assert.Equal("30 -> 20 -> 10", result.ToString());
+        Assert.Equal((uint)3, result.length);
+    }
+
+    [Fact]
+    public void ShouldBePrependAndAppendInRightOrder()
+    {
+        var result = new SinglyLinkedList<int>();
+        result.Prepend(10);
+        result.Prepend(20);
+        result.Append(30);
+        Assert.Equal("20 -> 10 -> 30", result.ToString());
         Assert.Equal((uint)3, result.length);
     }
 
