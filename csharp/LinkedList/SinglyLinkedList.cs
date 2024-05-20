@@ -27,10 +27,15 @@ public class SinglyLinkedList<T>
         head = null;
     }
 
-    public void Append(T value)
+    private Node<T> NewNode(T value)
     {
         this.length += 1;
-        var n = new Node<T>(value);
+        return new Node<T>(value);
+    }
+
+    public void Append(T value)
+    {
+        var n = this.NewNode(value);
 
         if (this.head == null)
         {
@@ -44,8 +49,7 @@ public class SinglyLinkedList<T>
 
     public void Prepend(T value)
     {
-        this.length += 1;
-        var n = new Node<T>(value);
+        var n = this.NewNode(value);
 
         if (this.head == null)
         {
@@ -64,11 +68,11 @@ public class SinglyLinkedList<T>
             throw new IndexOutOfRangeException();
         }
 
-        this.length += 1;
-        var n = new Node<T>(value);
+        var n = NewNode(value);
 
-        if (this.head == null)
+        if (this.head == null || index == 0)
         {
+            n.next = this.head;
             this.head = this.tail = n;
             return;
         }

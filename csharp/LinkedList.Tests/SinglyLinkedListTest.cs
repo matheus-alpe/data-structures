@@ -64,9 +64,22 @@ public class SingleLinkedListTest
     public void ShouldInsertAtZero()
     {
         var result = new SinglyLinkedList<int>();
+        result.Append(30);
         result.InsertAt(0, 20);
         Assert.True(result.Has(20));
-        Assert.Equal("20", result.ToString());
+        Assert.Equal("20 -> 30", result.ToString());
+        Assert.Equal((uint)2, result.length);
+    }
+
+    [Fact]
+    public void ShouldInsertAtOne()
+    {
+        var result = new SinglyLinkedList<int>();
+        result.Append(30);
+        result.InsertAt(1, 20);
+        Assert.True(result.Has(20));
+        Assert.Equal("30 -> 20", result.ToString());
+        Assert.Equal((uint)2, result.length);
     }
 
     [Fact]
