@@ -61,6 +61,42 @@ public class SingleLinkedListTest
     }
 
     [Fact]
+    public void ShouldInsertAtZero()
+    {
+        var result = new SinglyLinkedList<int>();
+        result.InsertAt(0, 20);
+        Assert.True(result.Has(20));
+        Assert.Equal("20", result.ToString());
+    }
+
+    [Fact]
+    public void ShouldInsertAt_IndexOutOfRangeException()
+    {
+        var result = new SinglyLinkedList<int>();
+        Assert.Throws<System.IndexOutOfRangeException>(() => result.InsertAt(1, 20));
+    }
+
+    [Fact]
+    public void ShouldInsertAtSpecificPosition()
+    {
+        var result = new SinglyLinkedList<int>();
+        result.Append(10);
+        result.Append(20);
+        result.InsertAt(1, 30);
+        Assert.Equal("10 -> 30 -> 20", result.ToString());
+    }
+
+    [Fact]
+    public void ShouldInsertAtOrder()
+    {
+        var result = new SinglyLinkedList<int>();
+        result.InsertAt(0, 10);
+        result.InsertAt(1, 20);
+        result.InsertAt(2, 30);
+        Assert.Equal("10 -> 20 -> 30", result.ToString());
+    }
+
+    [Fact]
     public void ShouldRemoveLastValue()
     {
         var result = new SinglyLinkedList<int>();

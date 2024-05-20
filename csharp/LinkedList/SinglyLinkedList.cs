@@ -57,6 +57,32 @@ public class SinglyLinkedList<T>
         this.head = n;
     }
 
+    public void InsertAt(uint index, T value)
+    {
+        if (index > this.length)
+        {
+            throw new IndexOutOfRangeException();
+        }
+
+        this.length += 1;
+        var n = new Node<T>(value);
+
+        if (this.head == null)
+        {
+            this.head = this.tail = n;
+            return;
+        }
+
+        var current = this.head;
+        for (int i = 1; i < index && current != null && current.next != null; i++)
+        {
+            current = current.next;
+        }
+
+        n.next = current!.next;
+        current.next = n;
+    }
+
     public void Pop()
     {
         if (this.head == null || this.tail == null)
