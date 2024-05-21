@@ -144,6 +144,69 @@ public class SingleLinkedListTest
     }
 
     [Fact]
+    public void ShouldDeleteAtZero()
+    {
+        var result = new SinglyLinkedList<int>();
+        result.Append(30);
+        result.DeleteAt(0);
+        Assert.False(result.Has(30));
+        Assert.Equal("", result.ToString());
+        Assert.Equal((uint)0, result.length);
+    }
+
+    [Fact]
+    public void ShouldDeleteAtOne()
+    {
+        var result = new SinglyLinkedList<int>();
+        result.Append(30);
+        result.InsertAt(1, 20);
+        result.DeleteAt(1);
+        Assert.False(result.Has(20));
+        Assert.Equal("30", result.ToString());
+        Assert.Equal((uint)1, result.length);
+    }
+
+    [Fact]
+    public void ShouldDeleteAt_IndexOutOfRangeException()
+    {
+        var result = new SinglyLinkedList<int>();
+        Assert.Throws<System.IndexOutOfRangeException>(() => result.DeleteAt(0));
+    }
+
+    [Fact]
+    public void ShouldDeleteAtSpecificPosition()
+    {
+        var result = new SinglyLinkedList<int>();
+        result.Append(10);
+        result.Append(20);
+        result.Append(30);
+
+        result.DeleteAt(1);
+        Assert.Equal("10 -> 30", result.ToString());
+    }
+
+    [Fact]
+    public void ShouldDeleteAtOrder()
+    {
+        var result = new SinglyLinkedList<int>();
+        result.Append(10);
+        result.Append(20);
+        result.Append(30);
+
+        result.DeleteAt(0);
+        Assert.Equal("20 -> 30", result.ToString());
+
+        result.DeleteAt(0);
+        Assert.Equal("30", result.ToString());
+
+        result.DeleteAt(0);
+        Assert.Equal("", result.ToString());
+
+        Assert.Equal((uint)0, result.length);
+
+    }
+
+    [Fact]
     public void ShouldReturnFalseOnEmptySearch()
     {
         var result = new SinglyLinkedList<int>();

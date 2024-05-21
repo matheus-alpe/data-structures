@@ -134,6 +134,29 @@ public class SinglyLinkedList<T>
         }
     }
 
+    public void DeleteAt(uint index)
+    {
+        if (this.head == null || index > this.length)
+        {
+            throw new IndexOutOfRangeException();
+        }
+
+        this.length -= 1;
+        if (index == 0)
+        {
+            this.head = this.head.next;
+            return;
+        }
+
+        var current = this.head;
+        for (int i = 1; i < index && current != null && current.next != null; i++)
+        {
+            current = current.next;
+        }
+
+        current!.next = current!.next!.next;
+    }
+
     public bool Has(T target)
     {
         var current = this.head;
