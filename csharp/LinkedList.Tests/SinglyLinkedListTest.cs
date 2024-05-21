@@ -110,6 +110,18 @@ public class SingleLinkedListTest
     }
 
     [Fact]
+    public void ShouldRemoveFirstValue()
+    {
+        var result = new SinglyLinkedList<int>();
+        result.Append(10);
+        result.Append(20);
+        result.Append(30);
+        result.Shift();
+        Assert.Equal("20 -> 30", result.ToString());
+        Assert.Equal((uint)2, result.length);
+    }
+
+    [Fact]
     public void ShouldRemoveLastValue()
     {
         var result = new SinglyLinkedList<int>();

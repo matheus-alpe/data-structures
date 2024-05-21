@@ -87,6 +87,24 @@ public class SinglyLinkedList<T>
         current.next = n;
     }
 
+    public void Shift()
+    {
+        if (this.head == null || this.tail == null)
+        {
+            return;
+        }
+
+        this.length -= 1;
+
+        if (this.head == this.tail)
+        {
+            this.head = this.tail = null;
+            return;
+        }
+
+        this.head = this.head.next;
+    }
+
     public void Pop()
     {
         if (this.head == null || this.tail == null)
