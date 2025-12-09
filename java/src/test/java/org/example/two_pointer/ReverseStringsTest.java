@@ -1,4 +1,4 @@
-package org.example.strings;
+package org.example.two_pointer;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
