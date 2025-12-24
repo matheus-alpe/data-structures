@@ -1,24 +1,25 @@
-package org.example.binary_search;
+package org.example.exponential_search;
 
-public class BinarySearch {
-    public static int binarySearch(int[] numbers, int n) {
-        int low = 0;
-        int high = numbers.length;
+import org.example.binary_search.BinarySearch;
 
-        while (low < high) {
-            int mid = (low + high) >>> 1;
+public class ExponentialSearch {
+    public static int exponentialSearch(int[] numbers, int target) {
+        if (numbers[0] == target) return 0;
 
-            if (numbers[mid] == n) {
-                return mid;
-            }
+        int i = 1;
+        int n = numbers.length;
 
-            if (numbers[mid] < n) {
-                low = mid+1;
-            } else {
-                high = mid;
-            }
+        while (i < n && numbers[i] < target) {
+            i *= 2;
         }
 
-        return -1;
+        if (numbers[i] == target) return i;
+
+        return BinarySearch.binarySearch(
+                numbers,
+                target,
+                i / 2,
+                Math.min(i, n - 1)
+        );
     }
 }

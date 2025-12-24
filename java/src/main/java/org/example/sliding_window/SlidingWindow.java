@@ -29,4 +29,23 @@ public class SlidingWindow {
 
         return max;
     }
+
+    public static int maximumLengthSubstringBetterPerformance(String s) {
+        int left = 0;
+        int max = 0;
+        int[] frequency = new int[26];
+
+        for (int right = 0; right < s.length(); right++) {
+            frequency[s.charAt(right) - 'a']++;
+
+            while(frequency[s.charAt(right) - 'a'] > 2) {
+                frequency[s.charAt(left) - 'a']--;
+                left++;
+            }
+
+            max = Math.max(max, right - left + 1);
+        }
+
+        return max;
+    }
 }
