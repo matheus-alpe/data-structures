@@ -1,6 +1,10 @@
 package org.example.sliding_window;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class ContainsDuplicate {
+    // https://leetcode.com/problems/contains-duplicate-ii/description
     public static boolean containsNearbyDuplicate(int[] nums, int k) {
         int left = 0;
         int right = 0;
@@ -16,6 +20,25 @@ public class ContainsDuplicate {
             }
         }
 
+        return false;
+    }
+
+    public static boolean containsNearbyDuplicatePerformance(int[] nums, int k) {
+        Set<Integer> set = new HashSet<Integer>(k);
+        int i = 0, j = 0;
+        int n = nums.length;
+        while (j <= k && j < n) {
+            if (!set.add(nums[j++])) {
+                return true;
+            }
+        }
+
+        while (j < n) {
+            set.remove(nums[i++]);
+            if (!set.add(nums[j++])) {
+                return true;
+            }
+        }
         return false;
     }
 }
