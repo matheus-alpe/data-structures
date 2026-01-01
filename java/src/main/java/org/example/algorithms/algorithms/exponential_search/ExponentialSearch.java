@@ -1,6 +1,6 @@
-package org.example.exponential_search;
+package org.example.algorithms.algorithms.exponential_search;
 
-import org.example.binary_search.BinarySearch;
+import org.example.algorithms.algorithms.binary_search.BinarySearch;
 
 public class ExponentialSearch {
     public static int exponentialSearch(int[] numbers, int target) {

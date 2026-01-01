@@ -1,5 +1,6 @@
-package org.example.binary_search;
+package org.example.algorithms.binary_search;
 
+import org.example.algorithms.algorithms.binary_search.BinarySearch;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

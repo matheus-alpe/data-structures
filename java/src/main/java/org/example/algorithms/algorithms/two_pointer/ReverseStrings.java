@@ -1,4 +1,4 @@
-package org.example.two_pointer;
+package org.example.algorithms.algorithms.two_pointer;
 
 public class ReverseStrings {
     // https://leetcode.com/problems/reverse-words-in-a-string-iii/description/

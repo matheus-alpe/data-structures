@@ -1,5 +1,6 @@
-package org.example.exponential_search;
+package org.example.algorithms.exponential_search;
 
+import org.example.algorithms.algorithms.exponential_search.ExponentialSearch;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

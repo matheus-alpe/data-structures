@@ -1,5 +1,6 @@
-package org.example.sliding_window;
+package org.example.algorithms.sliding_window;
 
+import org.example.algorithms.algorithms.sliding_window.ContainsDuplicate;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
