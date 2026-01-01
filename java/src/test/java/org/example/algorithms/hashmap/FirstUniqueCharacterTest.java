@@ -1,6 +1,5 @@
 package org.example.algorithms.hashmap;
 
-import org.example.algorithms.algorithms.hashmap.FirstUniqueCharacter;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 

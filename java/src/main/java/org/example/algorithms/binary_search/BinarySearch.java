@@ -1,4 +1,4 @@
-package org.example.algorithms.algorithms.binary_search;
+package org.example.algorithms.binary_search;
 
 public class BinarySearch {
     public static int binarySearch(int[] numbers, int target) {

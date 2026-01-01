@@ -1,4 +1,4 @@
-package org.example.algorithms.algorithms.sliding_window;
+package org.example.algorithms.sliding_window;
 
 import java.util.HashMap;
 import java.util.Map;

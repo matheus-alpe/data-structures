@@ -1,6 +1,5 @@
 package org.example.algorithms.hashmap;
 
-import org.example.algorithms.algorithms.hashmap.TwoSum;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

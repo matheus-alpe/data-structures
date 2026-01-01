@@ -1,6 +1,5 @@
 package org.example.algorithms.two_pointer;
 
-import org.example.algorithms.algorithms.two_pointer.ReverseStrings;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
