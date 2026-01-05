@@ -4,18 +4,18 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DoubleLinkedListTest {
+class DoublyLinkedListTest {
 
     @Test
     void addToFront_EmptyList() {
-        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         list.addToFront(1);
         assertEquals(Integer.valueOf(1), list.removeFromFront());
     }
 
     @Test
     void addToFront_NonEmptyList() {
-        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         list.addToFront(1);
         list.addToFront(2);
         assertEquals(Integer.valueOf(2), list.removeFromFront());
@@ -24,14 +24,14 @@ class DoubleLinkedListTest {
 
     @Test
     void addToEnd_EmptyList() {
-        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         list.addToEnd(1);
         assertEquals(Integer.valueOf(1), list.removeFromEnd());
     }
 
     @Test
     void addToEnd_NonEmptyList() {
-        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         list.addToEnd(1);
         list.addToEnd(2);
         assertEquals(Integer.valueOf(2), list.removeFromEnd());
@@ -40,19 +40,19 @@ class DoubleLinkedListTest {
 
     @Test
     void removeFromFront_EmptyList() {
-        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         assertNull(list.removeFromFront());
     }
 
     @Test
     void removeFromEnd_EmptyList() {
-        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         assertNull(list.removeFromEnd());
     }
 
     @Test
     void mixedOperations() {
-        DoubleLinkedList<String> list = new DoubleLinkedList<>();
+        DoublyLinkedList<String> list = new DoublyLinkedList<>();
         list.addToFront("a");
         list.addToEnd("b");
         list.addToFront("c");
@@ -65,13 +65,13 @@ class DoubleLinkedListTest {
 
     @Test
     void size_EmptyList() {
-        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         assertEquals(0, list.size());
     }
 
     @Test
     void size_AfterAdditions() {
-        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         list.addToFront(1);
         assertEquals(1, list.size());
         list.addToEnd(2);
@@ -82,7 +82,7 @@ class DoubleLinkedListTest {
 
     @Test
     void size_AfterRemovals() {
-        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         list.addToFront(1);
         list.addToEnd(2);
         list.removeFromFront();
@@ -93,20 +93,20 @@ class DoubleLinkedListTest {
 
     @Test
     void isEmpty_EmptyList() {
-        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         assertTrue(list.isEmpty());
     }
 
     @Test
     void isEmpty_NonEmptyList() {
-        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         list.addToFront(1);
         assertFalse(list.isEmpty());
     }
 
     @Test
     void isEmpty_AfterRemovingAll() {
-        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         list.addToFront(1);
         list.removeFromFront();
         assertTrue(list.isEmpty());

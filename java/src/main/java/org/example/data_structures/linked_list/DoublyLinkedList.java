@@ -1,6 +1,6 @@
 package org.example.data_structures.linked_list;
 
-public class DoubleLinkedList<T> {
+public class DoublyLinkedList<T> {
     private Node<T> head;
     private Node<T> tail;
     private int size;
