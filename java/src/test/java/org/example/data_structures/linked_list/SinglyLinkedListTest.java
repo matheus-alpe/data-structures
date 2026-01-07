@@ -12,7 +12,6 @@ class SinglyLinkedListTest {
 
         assertEquals(1, list.value);
         assertNull(list.next);
-        assertEquals(1, list.size);
     }
 
     @Test
@@ -21,7 +20,6 @@ class SinglyLinkedListTest {
         assertEquals(1, list.value);
         assertEquals(2, list.next.value);
         assertNull(list.next.next);
-        assertEquals(2, list.size);
     }
 
     @Test
@@ -32,6 +30,5 @@ class SinglyLinkedListTest {
         assertEquals(3, list.next.next.value);
         assertEquals(4, list.next.next.next.value);
         assertNull(list.next.next.next.next);
-        assertEquals(4, list.size);
     }
 }

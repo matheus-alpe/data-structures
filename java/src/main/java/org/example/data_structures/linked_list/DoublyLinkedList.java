@@ -3,7 +3,6 @@ package org.example.data_structures.linked_list;
 public class DoublyLinkedList<T> {
     private Node<T> head;
     private Node<T> tail;
-    private int size;
 
     public void addToFront(T value) {
         Node<T> newNode = new Node<>(value);
@@ -16,7 +15,6 @@ public class DoublyLinkedList<T> {
         }
 
         this.head = newNode;
-        size++;
     }
 
     public void addToEnd(T value) {
@@ -30,7 +28,6 @@ public class DoublyLinkedList<T> {
         }
 
         this.tail = newNode;
-        size++;
     }
 
     public T removeFromFront() {
@@ -44,7 +41,6 @@ public class DoublyLinkedList<T> {
         } else {
             this.tail = null;
         }
-        size--;
         return removedValue;
     }
 
@@ -59,15 +55,6 @@ public class DoublyLinkedList<T> {
         } else {
             this.head = null;
         }
-        size--;
         return removedValue;
-    }
-
-    public int size() {
-        return size;
-    }
-
-    public boolean isEmpty() {
-        return size == 0;
     }
 }

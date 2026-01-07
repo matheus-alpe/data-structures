@@ -7,7 +7,6 @@ public class ReverseLinkedList {
     public static <T> SinglyLinkedList<T> reverseList(SinglyLinkedList<T> head) {
         if (head == null) return null;
 
-        int originalSize = head.size;
         SinglyLinkedList<T> newList = null;
 
         while(head != null) {
@@ -17,9 +16,6 @@ public class ReverseLinkedList {
             head = nextNode;
         }
 
-        if (newList != null) {
-            newList.size = originalSize;
-        }
         return newList;
     }
 

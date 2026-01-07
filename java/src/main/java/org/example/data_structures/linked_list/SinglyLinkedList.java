@@ -2,18 +2,12 @@ package org.example.data_structures.linked_list;
 
 public class SinglyLinkedList<T> {
     public T value;
-    public int size;
     public SinglyLinkedList<T> next;
 
     public SinglyLinkedList() {}
 
     public SinglyLinkedList(T value) {
         this.value = value;
-        this.incrementSize();
-    }
-
-    private void incrementSize() {
-        this.size++;
     }
 
     public SinglyLinkedList<T> add(T newValue) {
@@ -29,7 +23,6 @@ public class SinglyLinkedList<T> {
             end.next = newNode;
         }
 
-        this.incrementSize();
         return this;
     }
 }
