@@ -3,7 +3,7 @@ package org.example.algorithms.linked_list;
 import org.example.data_structures.linked_list.SinglyLinkedList;
 
 public class CycleLinkedList {
-    // https://leetcode.com/problems/linked-list-cycle/description/
+    // https://leetcode.com/problems/linked-list-cycle/description/
     public static <T> boolean hasCycle(SinglyLinkedList<T> head) {
         SinglyLinkedList<T> ahead = head;
 
