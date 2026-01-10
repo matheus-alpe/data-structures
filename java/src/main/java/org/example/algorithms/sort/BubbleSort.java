@@ -7,7 +7,7 @@ import java.util.Arrays;
  * - Space Complexity:  O(1)
  */
 public class BubbleSort {
-    public static Result bubble(int[] nums) {
+    public static Result sort(int[] nums) {
         int size = nums.length;
         int iteractions = 0;
 
