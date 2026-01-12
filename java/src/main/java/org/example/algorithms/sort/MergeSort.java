@@ -22,7 +22,7 @@ public class MergeSort {
         return merge(left, right);
     }
 
-    public static SinglyLinkedList<Integer> findMiddle(SinglyLinkedList<Integer> head) {
+    private static SinglyLinkedList<Integer> findMiddle(SinglyLinkedList<Integer> head) {
         var slow = head;
         var fast = head.next;
 
@@ -34,7 +34,7 @@ public class MergeSort {
         return slow;
     }
 
-    public static SinglyLinkedList<Integer> merge(SinglyLinkedList<Integer> l1, SinglyLinkedList<Integer> l2) {
+    private static SinglyLinkedList<Integer> merge(SinglyLinkedList<Integer> l1, SinglyLinkedList<Integer> l2) {
         var head = new SinglyLinkedList<Integer>();
         var tail = head;
 
@@ -53,5 +53,45 @@ public class MergeSort {
         tail.next = l1 != null ? l1 : l2;
 
         return head.next;
+    }
+
+    public class OnArray {
+        // https://leetcode.com/problems/sort-an-array/
+        public static void mergeSort(int[] array, int low, int high) {
+            if (low >= high) {
+                return;
+            }
+            int mid = low + (high - low) / 2;
+            mergeSort(array, low, mid);
+            mergeSort(array, mid + 1, high);
+            mergeArray(array, low, mid, high);
+        }
+
+        private static void mergeArray(int[] array, int low, int mid, int high) {
+            int n1 = mid - low + 1;
+            int n2 = high - mid;
+            int[] leftPart = new int[n1];
+            int[] rightPart = new int[n2];
+
+            System.arraycopy(array, low, leftPart, 0, n1);
+            System.arraycopy(array, mid + 1, rightPart, 0, n2);
+
+            int p1 = 0, p2 = 0, writeInd = low;
+            while (p1 < n1 && p2 < n2) {
+                if (leftPart[p1] <= rightPart[p2]) {
+                    array[writeInd++] = leftPart[p1++];
+                } else {
+                    array[writeInd++] = rightPart[p2++];
+                }
+            }
+
+            while (p1 < n1) {
+                array[writeInd++] = leftPart[p1++];
+            }
+
+            while (p2 < n2) {
+                array[writeInd++] = rightPart[p2++];
+            }
+        }
     }
 }
