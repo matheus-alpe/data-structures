@@ -1,7 +1,7 @@
 package org.example.algorithms.sort;
 
 public class DutchNationalFlagSort {
-    // https://leetcode.com/problems/sort-colors/description/
+    // https://leetcode.com/problems/sort-colors/description/
     public static void sort(int[] nums) {
         int low = 0;
         int mid = 0;
