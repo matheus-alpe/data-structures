@@ -47,4 +47,10 @@ class BinaryTreeTest {
         System.out.println(tree.postorderTraversal());
         assertIterableEquals(List.of(1, 2, 4, 3, 6, 8, 7, 5), tree.postorderTraversal());
     }
+
+    @Test
+    public void testDfs() {
+        assertTrue(tree.dfs(6));
+        assertFalse(tree.dfs(11));
+    }
 }

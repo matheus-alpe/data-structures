@@ -42,6 +42,17 @@ public class BinaryTree {
         return this.searchRecursive(val, val < node.value ? node.left : node.right);
     }
 
+    // depth-first search
+    public boolean dfs(int val) {
+        return this.dfsRecursive(val, this.root);
+    }
+
+    private boolean dfsRecursive(int val, TreeNode node) {
+        if (Objects.isNull(node)) return false;
+        if (val == node.value) return true;
+        return this.dfsRecursive(val, node.left) || this.dfsRecursive(val, node.right);
+    }
+
     public List<Integer> preorderTraversal() {
         List<Integer> result = new ArrayList<>();
         this.preorderRecursive(this.root, result);
