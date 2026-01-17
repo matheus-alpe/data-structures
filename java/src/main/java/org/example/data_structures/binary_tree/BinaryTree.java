@@ -1,8 +1,11 @@
 package org.example.data_structures.binary_tree;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 import java.util.Objects;
+import java.util.Queue;
 
 public class BinaryTree {
     public TreeNode root;
@@ -51,6 +54,23 @@ public class BinaryTree {
         if (Objects.isNull(node)) return false;
         if (val == node.value) return true;
         return this.dfsRecursive(val, node.left) || this.dfsRecursive(val, node.right);
+    }
+
+    // breadth-first search
+    public boolean bfs(int val) {
+        if (Objects.isNull(root)) return false;
+
+        Deque<TreeNode> queue = new ArrayDeque<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            if (node.value == val) return true;
+            if (Objects.nonNull(node.left)) queue.add(node.left);
+            if (Objects.nonNull(node.right)) queue.add(node.right);
+        }
+
+        return false;
     }
 
     public List<Integer> preorderTraversal() {

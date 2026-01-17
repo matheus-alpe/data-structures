@@ -53,4 +53,10 @@ class BinaryTreeTest {
         assertTrue(tree.dfs(6));
         assertFalse(tree.dfs(11));
     }
+
+    @Test
+    public void testBfs() {
+        assertTrue(tree.bfs(2));
+        assertFalse(tree.bfs(12));
+    }
 }
