@@ -67,4 +67,17 @@ public class BinaryTree {
         result.add(node.value);
         inorderRecursive(node.right, result);
     }
+
+    public List<Integer> postorderTraversal() {
+        List<Integer> result = new ArrayList<>();
+        this.postorderRecursive(this.root, result);
+        return result;
+    }
+
+    private void postorderRecursive(TreeNode node, List<Integer> result) {
+        if (Objects.isNull(node)) return;
+        postorderRecursive(node.left, result);
+        postorderRecursive(node.right, result);
+        result.add(node.value);
+    }
 }
