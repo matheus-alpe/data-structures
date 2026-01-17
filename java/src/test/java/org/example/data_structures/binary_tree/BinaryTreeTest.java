@@ -19,6 +19,7 @@ class BinaryTreeTest {
         tree.insert(7);
         tree.insert(2);
         tree.insert(4);
+        tree.insert(1);
         tree.insert(6);
         tree.insert(8);
     }
@@ -32,6 +33,12 @@ class BinaryTreeTest {
     @Test
     public void testPreorderTraversal() {
         System.out.println(tree.preorderTraversal());
-        assertIterableEquals(List.of(5, 3, 2, 4, 7, 6, 8), tree.preorderTraversal());
+        assertIterableEquals(List.of(5, 3, 2, 1, 4, 7, 6, 8), tree.preorderTraversal());
+    }
+
+    @Test
+    public void testInorderTraversal() {
+        System.out.println(tree.inorderTraversal());
+        assertIterableEquals(List.of(1, 2, 3, 4, 5, 6, 7, 8), tree.inorderTraversal());
     }
 }

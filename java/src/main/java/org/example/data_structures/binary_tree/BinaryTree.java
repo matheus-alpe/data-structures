@@ -3,7 +3,6 @@ package org.example.data_structures.binary_tree;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 public class BinaryTree {
     public TreeNode root;
@@ -50,10 +49,22 @@ public class BinaryTree {
     }
 
     private void preorderRecursive(TreeNode node, List<Integer> result) {
-        if (Objects.nonNull(node)) {
-            result.add(node.value);
-            preorderRecursive(node.left, result);
-            preorderRecursive(node.right, result);
-        }
+        if (Objects.isNull(node)) return;
+        result.add(node.value);
+        preorderRecursive(node.left, result);
+        preorderRecursive(node.right, result);
+    }
+
+    public List<Integer> inorderTraversal() {
+        List<Integer> result = new ArrayList<>();
+        this.inorderRecursive(this.root, result);
+        return result;
+    }
+
+    private void inorderRecursive(TreeNode node, List<Integer> result) {
+        if (Objects.isNull(node)) return;
+        inorderRecursive(node.left, result);
+        result.add(node.value);
+        inorderRecursive(node.right, result);
     }
 }
