@@ -8,12 +8,12 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
 class BinaryTreeInorderTraversalTest {
-    private static BinaryTreeInorderTraversal.TreeNode root;
+    private static TreeNode root;
     @BeforeAll
     public static void setUp() {
-        root = new BinaryTreeInorderTraversal.TreeNode(1);
-        root.right = new BinaryTreeInorderTraversal.TreeNode(2);
-        root.right.left = new BinaryTreeInorderTraversal.TreeNode(3);
+        root = new TreeNode(1);
+        root.right = new TreeNode(2);
+        root.right.left = new TreeNode(3);
     }
 
     @Test
