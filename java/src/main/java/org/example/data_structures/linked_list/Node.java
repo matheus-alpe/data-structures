@@ -8,4 +8,8 @@ public class Node<T> {
     public Node(T value) {
         this.value = value;
     }
+
+    public static <T> Node<T> of(T value) {
+        return new Node<>(value);
+    }
 }
